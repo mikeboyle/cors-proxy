@@ -6,8 +6,8 @@ const fetch = require('node-fetch-native');
 const app = express();
 app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send('hello');
+app.get('/health', (req, res) => {
+  res.status(200).send('proxy server healthy');
 });
 
 app.get('*', (req, res) => {
